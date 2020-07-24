@@ -61,7 +61,9 @@ namespace PipelineTest
                     Console.WriteLine(code);
 
                 }
-                Console.WriteLine("max points and headlines" + "-->" + dict.Keys.Max() + "----->" + dict.Values.Max());
+              //  Console.WriteLine("max points and headlines" + "-->" + dict.Keys.Max() + "----->" + dict.Values.Max());
+                string min = dict.OrderByDescending(x => x.Value).First().Key;
+                Console.WriteLine(min + "------->" + dict.Values.Max());
                 string expectedUrl = ("https://news.ycombinator.com/");
                 Assert.AreEqual(expectedUrl, actual);
                 Thread.Sleep(3000);
